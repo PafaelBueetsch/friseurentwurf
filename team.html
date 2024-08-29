@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unser Team - Dein Friseur in Entfelden</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #FFD700;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .border-frame {
+            border: 10px solid #FFD700;
+            padding: 20px;
+            margin: 20px;
+        }
+        .navbar {
+            background-color: #333;
+            border-radius: 5px;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        .navbar-brand, .nav-link {
+            color: #FFD700 !important;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #fff !important;
+        }
+        .team {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .team h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #FFD700;
+        }
+        .team-member {
+            margin-bottom: 30px;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        .team-member:hover img {
+            transform: scale(1.1);
+        }
+        .footer {
+            background-color: #333;
+            color: #FFD700;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="border-frame">
+
+        <!-- Header / Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html">Dein Friseur</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="preisliste.html">Preisliste</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dienstleistungen.html">Dienstleistungen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ueber-uns.html">Über uns</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Team Section -->
+        <section class="team container">
+            <h2>Unser Team</h2>
+            <div class="row">
+                <div class="col-md-4 team-member">
+                    <img src="images/team-member1.jpg" alt="Max Mustermann" class="img-fluid">
+                    <h4>Max Mustermann</h4>
+                    <p>Master Stylist</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="images/team-member2.jpg" alt="Julia Mustermann" class="img-fluid">
+                    <h4>Julia Mustermann</h4>
+                    <p>Color Expert</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="images/team-member3.jpg" alt="Hans Mustermann" class="img-fluid">
+                    <h4>Hans Mustermann</h4>
+                    <p>Barber</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Dein Friseur in Entfelden - Alle Rechte vorbehalten</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

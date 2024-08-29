@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein Friseur in Entfelden</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000; /* Schwarzer Hintergrund */
+            color: #FFD700; /* Gelber Text */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .border-frame {
+            border: 10px solid #FFD700; /* Gelbe Umrandung */
+            padding: 20px;
+            margin: 20px;
+        }
+        .navbar {
+            background-color: #333;
+            border-radius: 5px;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        .navbar-brand, .nav-link {
+            color: #FFD700 !important;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #fff !important;
+        }
+        .hero {
+            background-image: url('images/hero-bild.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 200px 20px;
+            text-align: center;
+            position: relative;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Halbdurchsichtige Überlagerung */
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        .btn-hero {
+            font-size: 1.25rem;
+            padding: 10px 30px;
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-hero:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .services {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #FFD700;
+        }
+        .service-item {
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-item img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        .service-item:hover img {
+            transform: scale(1.1);
+        }
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .cta {
+            background-color: #FFD700;
+            color: #000;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .cta a {
+            background-color: #000;
+            color: #FFD700;
+            padding: 10px 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .cta a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .footer {
+            background-color: #333;
+            color: #FFD700;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Seitenumrandung -->
+    <div class="border-frame">
+
+        <!-- Header / Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html">Dein Friseur</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="preisliste.html">Preisliste</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dienstleistungen.html">Dienstleistungen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ueber-uns.html">Über uns</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Willkommen bei Ihrem Friseur</h1>
+                <p>Stilvolle Haarschnitte und kreative Stylings für jede Gelegenheit.</p>
+                <a href="kontakt.html" class="btn btn-hero">Jetzt Termin vereinbaren</a>
+            </div>
+        </div>
+
+        <!-- Dienstleistungen Section -->
+        <section class="services container">
+            <h2>Unsere Dienstleistungen</h2>
+            <div class="row">
+                <div class="col-md-4 service-item">
+                    <img src="images/haarschnitt.jpg" alt="Haarschnitt" class="img-fluid">
+                    <h4>Haarschnitt</h4>
+                    <p>Klassische und moderne Haarschnitte für Damen und Herren.</p>
+                </div>
+                <div class="col-md-4 service-item">
+                    <img src="images/faerben.jpg" alt="Färben" class="img-fluid">
+                    <h4>Färben</h4>
+                    <p>Professionelle Farbberatung und Coloration.</p>
+                </div>
+                <div class="col-md-4 service-item">
+                    <img src="images/styling.jpg" alt="Styling" class="img-fluid">
+                    <h4>Styling</h4>
+                    <p>Perfektes Styling für jeden Anlass.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta">
+            <h2>Besuchen Sie uns noch heute!</h2>
+            <a href="kontakt.html">Kontaktieren Sie uns</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Dein Friseur in Entfelden - Alle Rechte vorbehalten</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

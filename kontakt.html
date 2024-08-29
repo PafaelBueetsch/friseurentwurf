@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Dein Friseur in Entfelden</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #FFD700;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .border-frame {
+            border: 10px solid #FFD700;
+            padding: 20px;
+            margin: 20px;
+        }
+        .navbar {
+            background-color: #333;
+            border-radius: 5px;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        .navbar-brand, .nav-link {
+            color: #FFD700 !important;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #fff !important;
+        }
+        .contact {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #FFD700;
+        }
+        .form-control {
+            background-color: #333;
+            color: #FFD700;
+            border: 1px solid #FFD700;
+        }
+        .form-control::placeholder {
+            color: #FFD700;
+        }
+        .btn-primary {
+            background-color: #FFD700;
+            color: #000;
+            border: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .preview {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #333;
+            color: #FFD700;
+            border: 1px solid #FFD700;
+            border-radius: 5px;
+            min-height: 150px;
+        }
+        .success-message {
+            margin-top: 20px;
+            color: #00FF00;
+        }
+        .footer {
+            background-color: #333;
+            color: #FFD700;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="border-frame">
+
+        <!-- Header / Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="index.html">Dein Friseur</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="preisliste.html">Preisliste</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dienstleistungen.html">Dienstleistungen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ueber-uns.html">Über uns</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Kontakt Section -->
+        <section class="contact container">
+            <h2>Kontaktieren Sie uns</h2>
+            <form id="contact-form">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Ihr Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Geben Sie Ihren Namen ein" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Ihre E-Mail</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Geben Sie Ihre E-Mail-Adresse ein" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Betreff Ihrer Nachricht</label>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Worum geht es in Ihrer Nachricht?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ihre Nachricht</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Schreiben Sie hier Ihre Nachricht..." required oninput="updatePreview()"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Nachricht senden</button>
+            </form>
+
+            <!-- Live-Vorschau der Nachricht -->
+            <div class="preview" id="messagePreview">
+                <h4>Live-Vorschau Ihrer Nachricht:</h4>
+                <p id="previewText">Ihre Nachricht wird hier angezeigt...</p>
+            </div>
+
+            <!-- Erfolgsmeldung -->
+            <div class="success-message" id="successMessage" style="display: none;">
+                <h4>Danke! Ihre Nachricht wurde erfolgreich gesendet.</h4>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Dein Friseur in Entfelden - Alle Rechte vorbehalten</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function updatePreview() {
+            var message = document.getElementById("message").value;
+            var preview = document.getElementById("previewText");
+            preview.textContent = message ? message : "Ihre Nachricht wird hier angezeigt...";
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+
+            fetch('https://formspree.io/f/xblrwpyz', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('contact-form').reset();
+                    updatePreview();
+                } else {
+                    alert('Es gab ein Problem beim Senden Ihrer Nachricht.');
+                }
+            }).catch(function(error) {
+                alert('Es gab ein Problem beim Senden Ihrer Nachricht.');
+            });
+        });
+    </script>
+</body>
+</html>
+
